@@ -6,15 +6,16 @@ import androidx.room.PrimaryKey
 @Entity(
     foreignKeys = [
         ForeignKey(
-            entity = User::class,
+            entity = UserEntity::class,
             parentColumns = ["userId"],
             childColumns = ["createdBy"],
             onDelete = ForeignKey.CASCADE)
     ]
 )
-data class Group(
+data class GroupEntity(
     @PrimaryKey(autoGenerate = true)
     val groupId:Int,
     val groupName:String,
-    val createdBy:Int
+    val createdBy:Int,
+    val groupDescription:String
 )

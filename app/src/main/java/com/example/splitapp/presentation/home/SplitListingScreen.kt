@@ -64,6 +64,8 @@ fun HomeScreen(modifier: Modifier = Modifier,
             HomeEvent.NavigateToContactList -> {
                  navigateToAddSplit.invoke()
             }
+
+            else -> {}
         }
     }
 
@@ -72,7 +74,7 @@ fun HomeScreen(modifier: Modifier = Modifier,
         contract = ActivityResultContracts.RequestMultiplePermissions(),
         onResult = { permissions ->
             if (permissions[Manifest.permission.READ_CONTACTS] == true ) {
-             viewModel.onEvent(ContactIntent.LoadContacts)
+//             viewModel.onEvent(ContactIntent.LoadContacts)
             } else {
                 AlertDialog.Builder(context)
                     .setTitle("permission required")
@@ -84,8 +86,7 @@ fun HomeScreen(modifier: Modifier = Modifier,
                         context.startActivity(intent)
                     }
                     .setNegativeButton("Cancel") { _, _ ->
-                        Toast.makeText(context,
-                            "Permission Required", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "permission denied", Toast.LENGTH_SHORT).show()
                     }
 
                     .show()
@@ -94,7 +95,7 @@ fun HomeScreen(modifier: Modifier = Modifier,
     )
     LaunchedEffect(key1 = true) {
         checkContactPermission(context, permissionLauncher, uiIntent = {
-            viewModel.onEvent(it)
+//            viewModel.onEvent(it)
         })
     }
     Box(
@@ -109,25 +110,25 @@ fun HomeScreen(modifier: Modifier = Modifier,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
 
-            Text(text = "People", style = MaterialTheme.typography.titleLarge, color = Color.Black, fontWeight = FontWeight.Bold)
-            LazyRow(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentHeight(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(viewState) {
-                    SplitItemComp(item = it)
-                }
-            }
-            Text(text = "Groups", style = MaterialTheme.typography.titleLarge, color = Color.Black, fontWeight = FontWeight.Bold)
-            LazyVerticalGrid(columns = GridCells.Fixed(3),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                content = {
-                    items(viewState) {
-//                        SplitItemComp(item = it)
-                    }
-                })
+//            Text(text = "People", style = MaterialTheme.typography.titleLarge, color = Color.Black, fontWeight = FontWeight.Bold)
+//            LazyRow(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .wrapContentHeight(),
+//                horizontalArrangement = Arrangement.spacedBy(8.dp)
+//            ) {
+//                items(viewState) {
+//                    SplitItemComp(item = it)
+//                }
+//            }
+//            Text(text = "Groups", style = MaterialTheme.typography.titleLarge, color = Color.Black, fontWeight = FontWeight.Bold)
+//            LazyVerticalGrid(columns = GridCells.Fixed(3),
+//                horizontalArrangement = Arrangement.spacedBy(8.dp),
+//                content = {
+//                    items(viewState) {
+////                        SplitItemComp(item = it)
+//                    }
+//                })
 
 
         }

@@ -12,7 +12,7 @@ class ContactRepository(private val contentResolver: ContentResolver) {
 
         val contacts = getPhoneContacts()
         emit(contacts.toList().distinctBy {
-            it.id
+            it.name
         })
     }
 

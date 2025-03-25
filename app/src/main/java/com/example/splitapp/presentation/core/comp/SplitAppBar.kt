@@ -42,7 +42,7 @@ fun SplitAppBar(modifier: Modifier = Modifier,
                  Icon(painter = painterResource(R.drawable.ic_back_arrow),contentDescription = null)
             }
         },
-        actions ={
+        actions = {
             if (actionIcon != null) {
                 IconButton(onClick = {
                     iconClick.invoke()
@@ -54,7 +54,7 @@ fun SplitAppBar(modifier: Modifier = Modifier,
                 }
             }
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = MaterialTheme.colorScheme.surface),
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = MaterialTheme.colorScheme.secondary),
         modifier = Modifier.shadow(elevation = 2.dp)
         )
     

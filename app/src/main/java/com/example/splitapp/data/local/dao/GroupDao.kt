@@ -4,18 +4,18 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
-import com.example.splitapp.data.local.model.entities.Group
+import com.example.splitapp.data.local.model.entities.GroupEntity
 import com.example.splitapp.data.local.model.entities.GroupUserCrossRef
 import com.example.splitapp.data.local.model.relations.GroupWithUsers
 
 interface GroupDao {
     // Insert Group
     @Insert
-    suspend fun insertGroup(group: Group)
+    suspend fun insertGroup(group: GroupEntity)
 
     // Get Group with Users
     @Transaction
-    @Query("SELECT * FROM `Group` WHERE groupId = :groupId")
+    @Query("SELECT * FROM GroupEntity WHERE groupId = :groupId")
     suspend fun getGroupWithUsers(groupId: Int): GroupWithUsers
 
     // Add User to Group (Insert into Junction)
