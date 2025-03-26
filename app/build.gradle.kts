@@ -66,7 +66,7 @@ dependencies {
     //    navigation
     implementation(libs.hilt.navigation.compose)
 
-    implementation("androidx.navigation:navigation-compose:2.8.5")
+    implementation(libs.navigation.compose)
     implementation("androidx.room:room-ktx:2.6.1")
 
     //image loading

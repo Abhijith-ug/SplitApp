@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.splitapp.data.repository.ContactRepository
 import com.example.splitapp.domain.ContactModel
+import com.example.splitapp.presentation.home.HomeEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -39,4 +40,6 @@ class ContactViewModel @Inject constructor(private val repository: ContactReposi
             }
         }
     }
+
+
 }

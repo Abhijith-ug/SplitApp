@@ -5,5 +5,6 @@ import com.example.splitapp.domain.ContactModel
 data class AddSplitContentState(
     val searchQuery:String = "",
     val contacts:List<ContactModel>?=null,
-    val isSearching:Boolean = false
+    val isSearching:Boolean = false,
+    val selectedGroupMembers:List<ContactModel> = emptyList()
 )

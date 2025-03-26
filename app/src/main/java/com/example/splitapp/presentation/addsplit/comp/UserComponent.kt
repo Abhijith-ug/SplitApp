@@ -1,6 +1,7 @@
 package com.example.splitapp.presentation.addsplit.comp
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -28,13 +29,16 @@ import com.example.splitapp.domain.ContactModel
 import com.example.splitapp.presentation.core.SplitTypography
 
 @Composable
-fun UserComponent(modifier: Modifier = Modifier,item:ContactModel) {
+fun UserComponent(modifier: Modifier = Modifier,item:ContactModel,onItemClick:(ContactModel) -> Unit) {
     Row(
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth().
-                background(MaterialTheme.colorScheme.primary,
+                background(MaterialTheme.colorScheme.secondary,
                     shape = MaterialTheme.shapes.medium).
+                clickable {
+                   onItemClick.invoke(item)
+                }.
         padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically

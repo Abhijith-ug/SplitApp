@@ -49,6 +49,10 @@ import com.example.splitapp.presentation.contact.ContactViewModel
 import com.example.splitapp.presentation.core.CollectAsEvents
 import com.example.splitapp.presentation.split_listing.comp.SplitItemComp
 
+
+
+data object SplitListing
+
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier,
                navigateToAddSplit:() -> Unit

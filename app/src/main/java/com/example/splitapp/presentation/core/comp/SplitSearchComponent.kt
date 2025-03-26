@@ -27,7 +27,8 @@ import com.example.splitapp.ui.theme.fonts
 fun SplitSearchComponent(
     searchQuery:String,
     onQueryChanged:(String) -> Unit,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier
+) {
 
     TextField(
         value = searchQuery,
@@ -59,16 +60,7 @@ fun SplitSearchComponent(
                 imageVector = Icons.Rounded.Search,
                 contentDescription = ""
             )
-        },
-        colors = TextFieldDefaults.colors(
-            focusedTextColor = Color.Black,
-            unfocusedContainerColor = Color.White,
-            unfocusedTextColor = Color.Black,
-            focusedIndicatorColor = Color.Transparent,
-            unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent,
-            cursorColor = MaterialTheme.colorScheme.primary,
-        )
+        }
     )
 
 }

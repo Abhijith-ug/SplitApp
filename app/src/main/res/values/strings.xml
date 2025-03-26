@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SplitApp</string>
     <string name="search">Search</string>
+    <string name="create_group">Create Group</string>
 </resources>
